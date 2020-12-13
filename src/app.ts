@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan'; // cf winston
 import * as winston from '../config/winston';
 
-import * as cartsRoutes from './routes/carts/carts';
+import * as cartsRoutes from './routes/carts';
 
 const app = express();
 
