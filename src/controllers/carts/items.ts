@@ -17,7 +17,12 @@ export function create(req: Request, res: Response, next: NextFunction) {
         qty: qty
     };
     
-    return res.status(200).json(
-        jsonReturn
-    );
+    // return res.status(200).json(
+    //     jsonReturn
+    // );
+    setTimeout( () => {
+        return res.status(200).json(
+            jsonReturn
+        );
+    }, 6666);
 }
