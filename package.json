@@ -6,10 +6,10 @@
   "scripts": {
     "build": "webpack",
     "start:dev": "cross-env NODE_ENV=development webpack",
-    "run:dev": "cross-env NODE_ENV=development nodemon build/index.js",
+    "run:dev": "cross-env nodemon -r dotenv/config build/index.js dotenv_config_path=env/development/.env",
     "tsc": "tsc",
     "tsc:init": "tsc --init",
-    "start": "node build/index.js"
+    "start": "cross-env node -r dotenv/config build/index.js dotenv_config_path=.env"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,7 @@
     "app-root-path": "^2.2.1",
     "body-parser": "^1.18.3",
     "debug": "^2.6.9",
+    "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "winston": "^3.2.1"

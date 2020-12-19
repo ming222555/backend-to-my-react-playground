@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 import ICART_QTY from "@app/interfaces/ICART_QTY.interface";
 
 export function show(req: Request, res: Response, next: NextFunction) {
-
+console.log('process.env.PG_USERID',process.env.PG_USERID);
     const id = req.params.id; // params always string
 
     res.status(200).json(
