@@ -9,3 +9,6 @@
 /_kiv.txt
 /_TODO.txt
 /_url.txt
+
+/.env
+/env

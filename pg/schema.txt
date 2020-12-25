@@ -1,0 +1,30 @@
+categories
+---------------------
+id
+parent_id
+name
+breadcrumb_name
+
+
+products
+---------------------
+id
+name
+category_path
+   E.g. ',id_root_parentCategory,id_subparentCategory,id_subsubparentCategory,id_subsubsubparentCategory,...id_immediateparentCategory,'
+   Use: ( See UI.2) For products listing in any sub category_path ( beginning id_root_parentCategory)
+
+
+UI
+===============
+1 All root categories listed e.g. at site menu ( SELECT FROM categories WHERE id = parent_id; )
+    api? /categories/root
+
+2 When a category is selected ( including a root category), its immediate child categories are listed -
+    SELECT FROM categories WHERE parent_id = id_category_selected;
+    api? /categories/:id_category_selected/children
+
+  Its products listing is -
+    SELECT FROM products WHERE category_path BEGINS WITH ',id_root_parentCategory,id_subparentCategory,...id_category_selected,';
+    api? /categories/:id_category_selected/products
+
